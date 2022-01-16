@@ -1,0 +1,5 @@
+@mixin with_b-r ($w, $h, $b-r) {
+    width: $w;
+    height: $h;
+    border-radius: $b-r;
+}

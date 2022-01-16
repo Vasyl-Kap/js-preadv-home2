@@ -1,0 +1,799 @@
+@import './base/base';
+@import './base/variables';
+@import './base/mixins';
+
+
+.header {
+    width: 100%;
+    height: 700px;
+    background: {
+        image: url(../images/header_d_t.png);
+        position: center;
+        size: cover;
+        repeat: no-repeat;
+        color: #000;
+    }
+}
+
+.logo-buttons {
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    .logo {
+        font-family: $main-font;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        display: flex;
+        align-items: flex-end;
+        color: $main-text-color;
+    }
+    .buttons__log, .buttons__sign {
+        width: 90px;
+        height: 36px;
+        font-family: $main-font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        color: $main-text-color;
+        background-color: transparent;
+        background-repeat:no-repeat;
+        overflow: hidden;
+        outline:none;
+        border: none;
+        &:hover {
+            border: 2px solid #FFFFFF;
+            border-radius: 40px;
+        }
+    }
+}
+
+.promo {
+    width: 500px;
+    margin: 0 auto;
+    padding-top: 110px;
+    &__bolt {
+        font-family: $main-font;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 52px;
+        text-align: center;
+        color: $main-text-color;
+        line-height: 63px;
+    }
+    &__normal {
+        font-family: $second-font;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 24px;
+        text-align: center;
+        color: $roboto-white;
+        padding-top: 28px;
+    }
+    &_center {
+        text-align: center;
+    }
+    &__button {
+        margin: 33px auto 0;
+        background-color: $red-text-color;
+        @include with_b-r (225px, 40px, 40px);
+        overflow: hidden;
+        outline:none;
+        border: none;
+        font-family: $main-font;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        color: $main-text-color;
+    }
+}
+
+%chapters {
+    padding: 89px 0 35px;
+    text-align: center;
+    font: {
+        family: $main-font;
+        style: normal;
+        weight: bold;
+        size: 26px;
+    }
+    color: $dreamshare-color;
+}
+
+.dreamshare {
+    width: 65%;
+    margin: 0 auto;
+    &__works {
+        @extend %chapters;
+    }
+    &__step {
+        display: flex;
+        justify-content: space-between;
+        &__one, &__two, &__three {
+            @include with_b-r (300px, 400px, 4px);
+            display: flex;
+            align-items: flex-end;
+            
+        }
+        &__one {
+            background: {
+                image: url(../images/step1_d_t.png);
+                position: center;
+                size: cover;
+                repeat: no-repeat;
+            }
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%), url(../images/step1_d_t.png) 0 0 no-repeat;
+            &__button {
+                margin: 0 0 25px 25px;
+                @include with_b-r (70px, 20px, 40px);
+                background-color: $red-text-color;
+                overflow: hidden;
+                outline:none;
+                border: none;
+                font-family: $main-font;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 10px;
+                color: $main-text-color;
+                letter-spacing: 2px;
+            }
+            &__bolt {
+                font: {
+                    family: $main-font;
+                    style: normal;
+                    weight: bold;
+                    size: 24px;
+                }
+                line-height: 26px;
+                color: $main-text-color;
+                margin: 0 0 25px 25px;
+            }
+            &__normal {
+                font: {
+                    family: $second-font;
+                    style: normal;
+                    weight: 300;
+                    size: 14px;
+                }
+                line-height: 14px;
+                color: $roboto-lightgrey;
+                margin: 0 25px 21px 25px;
+            }
+        }
+        &__two {
+            background: {
+                image: url(../images/step2_d_t.png);
+                position: center;
+                size: cover;
+                repeat: no-repeat;
+            }
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%), url(../images/step2_d_t.png) 0 0 no-repeat;
+        }
+        &__three {
+            background: {
+                image: url(../images/step3_d_t.png);
+                position: center;
+                size: cover;
+                repeat: no-repeat;
+            }
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%), url(../images/step3_d_t.png) 0 0 no-repeat;
+        }
+        &__one, &__two {
+            margin-right: 20px;
+        }
+    }
+}
+
+%avatars {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 17px;
+}
+
+.partners {
+    width: 65%;
+    margin: 0 auto;
+    &__text {
+        @extend %chapters;
+    }
+    &__blocks {
+        display: flex;
+        margin-bottom: 36px;
+        &__first, &__second {
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+        }
+        &__about {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            &__profile {
+                width: 231px;
+            }
+            &__one {
+                @extend %avatars;
+                background-image: url(../images/Avatar1.png);
+            }
+            &__two {
+                @extend %avatars;
+                background-image: url(../images/Avatar2.png);
+            }
+            &__three {
+                @extend %avatars;
+                background-image: url(../images/Avatar3.png);
+            }
+            &__four {
+                @extend %avatars;
+                background-image: url(../images/Avatar4.png);
+            }
+            &__bolt {
+                font: {
+                    family: $main-font;
+                    style: normal;
+                    weight: bold;
+                    size: 14px;
+                }
+                line-height: 17px;
+                text-align: center;
+                color: $dreamshare-color;
+                margin-bottom: 15px;
+            }
+            &__normal {
+                margin: 0 auto;
+                padding: 0 5px;
+                font-family: $second-font;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 14px;
+                line-height: 14px;
+                text-align: center;
+                color: $roboto-grey;
+            }
+        }
+    }
+    
+    &__button {
+        @include with_b-r (180px, 40px, 40px);
+        background: #FFFFFF;
+        border: 2px solid $red-text-color;
+        box-sizing: border-box;
+        font: {
+            family: $main-font;
+            style: normal;
+            weight: bold;
+            size: 14px;
+        }
+        line-height: 17px;
+        color: $red-text-color;
+        &__block {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+.discover {
+    width: 65%;
+    margin: 0 auto;
+    &__text {
+        @extend %chapters;
+    }
+    &__block {
+        &__text {
+            padding: 0 10px;
+            font: {
+                family: $main-font;
+                style: normal;
+                weight: bold;
+                size: 22px;
+            }
+            line-height: 27px;
+            text-align: center;
+            color: $main-text-color;
+        }
+        &__first {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            &__sport, &__health, &__extreme {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            &__sport {
+                margin-right: 20px;
+                @include with_b-r (300px, 310px, 4px);
+                background: linear-gradient(rgba(0, 0, 0, 0.199)100%), url(../images/1sport_d_t.png) 0 0 no-repeat;
+            }
+            &__health {
+                margin-right: 20px;
+               @include with_b-r (300px, 310px, 4px);
+                background: linear-gradient(rgba(0, 0, 0, 0.199)100%), url(../images/2health_d_t.png) 0 0 no-repeat; 
+            }
+            &__extreme {
+                @include with_b-r (300px, 310px, 4px);
+                background: linear-gradient(rgba(0, 0, 0, 0.199)100%), url(../images/3extreme_d_t.png) 0 0 no-repeat;
+            }
+        }
+        &__second {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            &__games, &__culture {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            &__games {
+                margin-right: 20px;
+                @include with_b-r (300px, 310px, 4px);
+                background: linear-gradient(rgba(0, 0, 0, 0.199)100%), url(../images/4games_d_t.png) 0 0 no-repeat;
+            }
+            &__culture {
+                @include with_b-r (620px, 310px, 4px);
+                background: linear-gradient(rgba(0, 0, 0, 0.199)100%), url(../images/5culture_d_t.png) 0 0 no-repeat;
+            }
+        }
+        &__third {
+            display: flex;
+            justify-content: space-between;
+            &__relax, &__trevelling {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            &__relax {
+                margin-right: 20px;
+                @include with_b-r (620px, 310px, 4px);
+                background: linear-gradient(rgba(0, 0, 0, 0.199)100%), url(../images/6relax_d_t.png) 0 0 no-repeat;
+            }
+            &__trevelling {
+                @include with_b-r (300px, 310px, 4px);
+                background: linear-gradient(rgba(0, 0, 0, 0.199)100%), url(../images/7travel_d_t.png) 0 0 no-repeat;
+            }
+        }
+    }
+}
+
+.holiday {
+    width: 65%;
+    margin: 0 auto;
+    &__text {
+        @extend %chapters;
+    }
+    &__text2 {
+        font: {
+            family: $second-font;
+            style: normal;
+            weight: 300;
+            size: 18px;
+        }
+        line-height: 14px;
+        text-align: center;
+        color: $roboto-grey;
+        margin-bottom: 25px;
+    }
+    &__search {
+        margin-bottom: 100px;
+        display: flex;
+        justify-content: center;
+        &__term {
+            margin-right: 10px;
+            border: 1px solid #D4D4D4;
+            @include with_b-r (299px, 40px, 3px);
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+            font-family: $second-font;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 16px;
+            display: flex;
+            align-items: center;
+            color: $roboto-footer;
+            padding-left: 15px;
+        }
+        &__button {
+            @include with_b-r (172px, 40px, 40px);
+            background-color: $red-text-color;
+            overflow: hidden;
+            outline:none;
+            border: none;
+            font: {
+                family: $main-font;
+                style: normal;
+                weight: bold;
+                size: 14px;
+            }
+            line-height: 17px;
+            color: $main-text-color;
+        }
+    }
+}
+
+.footer {
+    width: 65%;
+    margin: 0 auto 36px;
+    display: flex;
+    justify-content: space-between;
+    &__dreamshare, &__company, &__partners, &__icon {
+        width: 25%;
+        margin-top: 40px;
+    }
+    &__partners {
+        font: {
+                family: $main-font;
+                style: normal;
+                weight: bold;
+                size: 14px;
+            }
+            line-height: 17px;
+            color: $dreamshare-color;
+    }
+    &__dreamshare {
+        font-family: $main-font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        color: $red-text-color;
+    }
+    &__icon {
+        text-align: end;
+        &__text {
+            font-family: $main-font;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 10px;
+            line-height: 12px;
+            letter-spacing: 1px;
+            color: #CCCCCC;
+            margin-bottom: 7px;
+        }
+        &__bootmap {
+            display: flex;
+            justify-content: flex-end;
+            &__icon {
+                width: 110px;
+                height: 24px;
+                background: {
+                    image: url(../images/Bitmap.png);
+                    position: center;
+                    size: cover;
+                    repeat: no-repeat;
+                }
+            }
+        }
+    }
+    &__company {
+        &__text {
+            font: {
+                family: $main-font;
+                style: normal;
+                weight: bold;
+                size: 14px;
+            }
+            line-height: 17px;
+            color: $dreamshare-color;
+            margin-bottom: 12px;
+        }
+        &__other {
+            &__text {
+                font-family: $second-font;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 14px;
+                line-height: 26px;
+                color: $roboto-footer;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .logo-buttons {
+        width: 87%;
+    }
+
+    .dreamshare {
+        width: 97%;
+    }
+
+    .partners {
+        width: 65%;
+        &__blocks {
+            display: inline-block;
+            &__first, &__second {
+                width: 100%;
+            }
+            &__first {
+                margin-bottom: 35px;
+            }
+        }
+    }
+
+    .discover {
+        width: 97%;
+        &__block {
+            &__text {
+                padding: 0 15px;
+            }
+        }
+    }
+
+    .holiday {
+        &__text {
+            padding-bottom: 43px;
+        }
+    }
+
+    .footer {
+        width: 90%;
+        &__dreamshare {
+            width: 30%;
+        }
+        &__company {
+            width: 25%;
+        }
+        &__partners {
+            width: 25%;
+        }
+        &__icon {
+            width: 20%;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .dreamshare {
+        &__step {
+            display: inline;
+            &__one, &__two, &__three {
+                margin: 0 auto;
+                height: 447px;
+                width: 97%;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            &__one, &__two {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    
+    .partners {
+        width: 97%;
+        &__blocks {
+            width: 100%;
+            margin: 0 auto;
+            &__second {
+                margin-bottom: 36px;
+            }
+        }
+        &__button {
+            width: 280px;
+        }    
+    }
+
+    .discover {
+        &__block {
+            &__first, &__second, &__third {
+                width: 97%;
+                display: inline;
+            }
+            &__first {
+                &__sport {
+                    background: linear-gradient(rgba(0, 0, 0, 0.199)100%), url(../images/1sport_m.png) 0 0 no-repeat;
+                }
+                &__health {
+                    background: linear-gradient(rgba(0, 0, 0, 0.199)100%), url(../images/2health_m.png) 0 0 no-repeat;
+                }
+                &__extreme {
+                    background: linear-gradient(rgba(0, 0, 0, 0.199)100%), url(../images/3extreme_m.png) 0 0 no-repeat;
+                }
+                &__sport, &__health, &__extreme {
+                    width: 100%;
+                    margin: 0 auto;
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    margin-bottom: 10px;
+                }
+            }
+            &__second {
+                &__games {
+                    background: linear-gradient(rgba(0, 0, 0, 0.199)100%), url(../images/4games_m.png) 0 0 no-repeat;
+                }
+                &__culture {
+                    background: linear-gradient(rgba(0, 0, 0, 0.199)100%), url(../images/5culture_m.png) 0 0 no-repeat;
+                }
+                &__games, &__culture {
+                    width: 100%;
+                    margin: 0 auto;
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    margin-bottom: 10px;
+                }
+            }
+            &__third {
+                &__relax {
+                    margin-bottom: 10px;
+                    background: linear-gradient(rgba(0, 0, 0, 0.199)100%), url(../images/6relax_m.png) 0 0 no-repeat;
+                }
+                &__trevelling {
+                    background: linear-gradient(rgba(0, 0, 0, 0.199)100%), url(../images/7travel_m.png) 0 0 no-repeat;
+                }
+                &__relax, &__trevelling {
+                    width: 100%;
+                    margin: 0 auto;
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    }
+    .holiday {
+        &__search {
+            display: inline;
+            justify-content: center;
+            align-items: center;
+            &__term {
+                margin: 0 auto 15px;
+            }
+            &__button {
+                width: 280px;
+                margin: 0 48px 40px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .holiday {
+        &__search {
+            &__button {
+                margin: 0 auto 40px;
+            }
+        }
+    }
+    .header {
+        height: 540px;
+        .logo-buttons {
+            padding-top: 20px;
+            .logo {
+            position: absolute;
+            left: 27%;
+            top: 155px;
+            }
+            .buttons {
+                position: relative;
+                margin: 0 auto;
+            }
+        }
+        .promo {
+            width: 90%;
+            padding-top: 108px;
+            &__bolt {
+                font-size: 30px;
+                line-height: 37px;
+            }
+            &__normal {
+                width: 90%;
+                font-size: 18px;
+                line-height: 24px;
+                margin: 0 auto;
+            }
+            &__button {
+                width: 280px;
+            }
+        }
+    }
+    .holiday {
+        width: 97%;
+        &__search {
+            &__term {
+                width: 280px;
+            }
+        }
+    }
+    .dreamshare__works, .partners__text, .discover__text, .holiday__text {
+        padding: 34px 0 15px;
+        font-size: 22px;
+        line-height: 27px;
+    }
+    .dreamshare__step__one {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%), url(../images/step1_m.png) 0 0 no-repeat;
+    }
+    .dreamshare__step__two {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%), url(../images/step2_m.png) 0 0 no-repeat;
+    }
+    .dreamshare__step__three {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%), url(../images/step3_m.png) 0 0 no-repeat;
+    }
+    .dreamshare__step__one, .dreamshare__step__two, .dreamshare__step__three {
+        height: 240px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .partners__blocks {
+        margin-bottom: 20px;
+    }
+    .partners__blocks__first, .partners__blocks__second {
+        display: inline;
+    }
+    .partners__blocks__about {
+        width: 236px;
+        height: 205px;
+        margin: 0 auto 16px;
+    }
+    .discover__block__first {
+        &__sport, &__health, &__extreme {
+            width: 300px;
+            height: 120px;
+        }
+    }
+    .discover__block__second {
+        &__games, &__culture {
+            width: 300px;
+            height: 120px;
+        }
+    }
+    .discover__block__third {
+        &__relax, &__trevelling {
+            width: 300px;
+            height: 120px;
+        }
+        &__relax {
+            margin-bottom: 10px;
+        }
+    }
+    .holiday__search__button {
+        margin-left: 40px;
+    }
+
+    .footer {
+        display: inline;
+        &__dreamshare, &__company, &__partners, &__icon {
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 14px;
+        }
+        &__dreamshare {
+            padding-top: 26px;
+        }
+        &__company {
+            &__other {
+                width: 70%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                &__text {
+                    padding-left: 15px;
+                }
+            }
+        }
+        &__icon {
+            margin-bottom: 20px;
+            &__bootmap {
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .holiday__search__button {
+        margin-left: 15px;
+    }
+}
